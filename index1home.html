@@ -1,0 +1,201 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <script
+      src="https://unpkg.com/unlazy@0.11.3/dist/unlazy.with-hashing.iife.js"
+      defer
+      init
+    ></script>
+    <script type="text/javascript">
+      window.tailwind.config = {
+        darkMode: ["class"],
+        theme: {
+          extend: {
+            colors: {
+              border: "hsl(var(--border))",
+              input: "hsl(var(--input))",
+              ring: "hsl(var(--ring))",
+              background: "hsl(var(--background))",
+              foreground: "hsl(var(--foreground))",
+              primary: {
+                DEFAULT: "hsl(var(--primary))",
+                foreground: "hsl(var(--primary-foreground))",
+              },
+              secondary: {
+                DEFAULT: "hsl(var(--secondary))",
+                foreground: "hsl(var(--secondary-foreground))",
+              },
+              destructive: {
+                DEFAULT: "hsl(var(--destructive))",
+                foreground: "hsl(var(--destructive-foreground))",
+              },
+              muted: {
+                DEFAULT: "hsl(var(--muted))",
+                foreground: "hsl(var(--muted-foreground))",
+              },
+              accent: {
+                DEFAULT: "hsl(var(--accent))",
+                foreground: "hsl(var(--accent-foreground))",
+              },
+              popover: {
+                DEFAULT: "hsl(var(--popover))",
+                foreground: "hsl(var(--popover-foreground))",
+              },
+              card: {
+                DEFAULT: "hsl(var(--card))",
+                foreground: "hsl(var(--card-foreground))",
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style type="text/tailwindcss">
+      @layer base {
+        :root {
+          --background: 0 0% 100%;
+          --foreground: 240 10% 3.9%;
+          --card: 0 0% 100%;
+          --card-foreground: 240 10% 3.9%;
+          --popover: 0 0% 100%;
+          --popover-foreground: 240 10% 3.9%;
+          --primary: 240 5.9% 10%;
+          --primary-foreground: 0 0% 98%;
+          --secondary: 240 4.8% 95.9%;
+          --secondary-foreground: 240 5.9% 10%;
+          --muted: 240 4.8% 95.9%;
+          --muted-foreground: 240 3.8% 46.1%;
+          --accent: 240 4.8% 95.9%;
+          --accent-foreground: 240 5.9% 10%;
+          --destructive: 0 84.2% 60.2%;
+          --destructive-foreground: 0 0% 98%;
+          --border: 240 5.9% 90%;
+          --input: 240 5.9% 90%;
+          --ring: 240 5.9% 10%;
+          --radius: 0.5rem;
+        }
+        .dark {
+          --background: 240 10% 3.9%;
+          --foreground: 0 0% 98%;
+          --card: 240 10% 3.9%;
+          --card-foreground: 0 0% 98%;
+          --popover: 240 10% 3.9%;
+          --popover-foreground: 0 0% 98%;
+          --primary: 0 0% 98%;
+          --primary-foreground: 240 5.9% 10%;
+          --secondary: 240 3.7% 15.9%;
+          --secondary-foreground: 0 0% 98%;
+          --muted: 240 3.7% 15.9%;
+          --muted-foreground: 240 5% 64.9%;
+          --accent: 240 3.7% 15.9%;
+          --accent-foreground: 0 0% 98%;
+          --destructive: 0 62.8% 30.6%;
+          --destructive-foreground: 0 0% 98%;
+          --border: 240 3.7% 15.9%;
+          --input: 240 3.7% 15.9%;
+          --ring: 240 4.9% 83.9%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Full Screen Event Flow</title>
+        <link
+          href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+          rel="stylesheet"
+        />
+        <style>
+          :root {
+            --background: #f9fafb;
+            --foreground: #1a202c;
+            --primary: #3182ce;
+            --border: #e2e8f0;
+            --input: #edf2f7;
+            --ring: #bfcddb;
+            --primary-foreground: #ffffff;
+            --secondary: #63b3ed;
+            --secondary-foreground: #ffffff;
+            --accent: #f6ad55;
+            --accent-foreground: #ffffff;
+            --destructive: #f56565;
+            --destructive-foreground: #ffffff;
+            --muted: #cbd5e0;
+            --muted-foreground: #4a5568;
+            --card: #ffffff;
+            --card-foreground: #2d3748;
+            --popover: #edf2f7;
+            --popover-foreground: #2d3748;
+          }
+        </style>
+      </head>
+      <body
+        class="bg-background min-h-screen flex flex-col items-center justify-center"
+      >
+        <header class="flex justify-between items-center w-full p-4">
+          <nav class="flex space-x-4">
+            <a href="#" class="text-muted-foreground">Home</a>
+            <a href="#" class="text-muted-foreground">Feedback</a>
+            <a href="#" class="text-muted-foreground">About</a>
+          </nav>
+          <div class="relative">
+            <button
+              class="bg-secondary text-secondary-foreground p-2 rounded-full"
+            >
+              <img
+                src="https://openui.fly.dev/openui/24x24.svg?text=👤"
+                alt="User Icon"
+              />
+            </button>
+          </div>
+        </header>
+        <h1 class="text-4xl font-bold text-primary mt-8">EVENT FLOW</h1>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 p-4">
+          <div class="bg-card p-6 rounded-lg shadow-lg">
+            <h2 class="text-2xl font-semibold text-primary">Ongoing Events</h2>
+            <p class="text-muted-foreground">
+              "Stay updated with the latest happenings and never miss out on
+              exciting events!"
+            </p>
+            <button
+              class="mt-4 bg-secondary text-secondary-foreground hover:bg-secondary/80 p-2 rounded-lg"
+            >
+              View Details
+            </button>
+          </div>
+
+          <div class="bg-card p-6 rounded-lg shadow-lg">
+            <h2 class="text-2xl font-semibold text-primary">Leaderboard</h2>
+            <p class="text-muted-foreground">
+              "Check out the top performers and see who's leading the charts!"
+            </p>
+            <button
+              class="mt-4 bg-secondary text-secondary-foreground hover:bg-secondary/80 p-2 rounded-lg"
+            >
+              View Top Achievers
+            </button>
+          </div>
+        </div>
+
+        <div class="fixed bottom-4 right-4">
+          <button
+            id="theme-toggle"
+            class="bg-secondary text-secondary-foreground p-2 rounded-full focus:outline-none"
+          >
+            <img
+              src="https://openui.fly.dev/openui/24x24.svg?text=🌙"
+              alt="Theme Toggle Icon"
+            />
+          </button>
+        </div>
+      </body>
+    </html>
+  </body>
+</html>
